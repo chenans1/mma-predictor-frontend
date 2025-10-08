@@ -2,3 +2,5 @@
 - Data: Handled by Supabase Postgres Database
 - ML Predictions: Handled by LightGBM model. More models will be implemented later : )
 - Frontend: React, Vercel
+
+eventually will feature a flask server for real time predictions on whatever fights the user requests. 
