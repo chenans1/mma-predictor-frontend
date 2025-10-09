@@ -1,16 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import PredictedEventsTable from './components/predictedEventsTable';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>I LOVE LEBRON JAMES</p>
-      </header>
+    <div style={{ padding: 24, maxWidth: 1000, margin: '0 auto' }}>
+      <h1>MMA Predicted Events</h1>
+      <PredictedEventsTable />
     </div>
   );
 }
