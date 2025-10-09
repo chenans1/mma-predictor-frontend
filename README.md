@@ -4,3 +4,5 @@
 - Frontend: React, Vercel
 
 eventually will feature a flask server for real time predictions on whatever fights the user requests. 
+
+Contact me for info about backend (haven't publicized it rn)
