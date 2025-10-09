@@ -112,7 +112,7 @@ function EventCard({ evt }) {
         <div>
           <div style={styles.cardDate}>{dateStr}</div>
           <div style={styles.cardName}>{evt.event_name}</div>
-          <div style={styles.cardId}>{evt.event_id}</div>
+          {/* <div style={styles.cardId}>{evt.event_id}</div> */}
         </div>
         <div style={styles.boutTag}>
           {evt.num_bouts} bout{evt.num_bouts === 1 ? "" : "s"}
