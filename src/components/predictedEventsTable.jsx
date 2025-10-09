@@ -10,7 +10,7 @@ export default function PredictedEventsTable() {
         <table>
             <thead>
                 <tr>
-                    <th>Date</th><th>F1</th><th>F2</th><th>P(F1)</th><th>P(F2)</th><th>Weight</th>
+                    <th>Event</th><th>Date</th><th>F1</th><th>F2</th><th>Fighter 1 Win Odds</th><th>Fighter 2 Win Odds</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,11 +18,10 @@ export default function PredictedEventsTable() {
                     <tr key={r.event_id}>
                         <td>{r.event_name}</td>
                         <td>{new Date(r.event_date).toLocaleDateString()}</td>
-                        <td>{r.weight_class}</td>
                         <td>{r.fighter1}</td>
                         <td>{r.fighter2}</td>
-                        <td>{r.figher1_win_odds?.toFixed?.(3)}</td>
-                        <td>{r.fighter2_win_odds?.toFixed?.(3)}</td>
+                        <td>{Number(r.fighter1_win_odds*100).toFixed(2)}%</td>
+                        <td>{Number(r.fighter2_win_odds*100).toFixed(2)}%</td>
                     </tr>
                 ))}
             </tbody>
