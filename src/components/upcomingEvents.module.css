@@ -1,0 +1,93 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #e6e6e6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  background: #0f0f10;
+  padding: 16px;
+  color: #e6e6e6;
+  transition: background 0.15s ease;
+}
+.card:hover {
+  background: #1a1a1b;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cardDate {
+  font-size: 14px;
+  color: #9aa0a6;
+}
+
+.cardName {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.cardId {
+  font-size: 12px;
+  color: #7a7a7a;
+  margin-top: 2px;
+}
+
+.boutTag {
+  background: #1c1c1e;
+  border-radius: 10px;
+  padding: 4px 10px;
+  font-size: 14px;
+  color: #e6e6e6;
+  white-space: nowrap;
+}
+
+.loadingSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 0;
+}
+
+.skeleton {
+  border-radius: 10px;
+  background: #1c1c1e;
+}
+
+.errorBox {
+  border: 1px solid rgba(244, 67, 54, 0.4);
+  background: rgba(244, 67, 54, 0.15);
+  color: #ffb4a9;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.emptyBox {
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 16px;
+  color: #cfcfcf;
+}
