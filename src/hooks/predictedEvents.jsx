@@ -11,8 +11,8 @@ export function usePredictedEvents() {
 
     (async () => {
     const { data, error } = await supabase
-        .from('predicted_events') 
-        .select('event_id,event_name, fighter1,fighter2,fighter1_win_odds,fighter2_win_odds,event_date,weight_class')
+        .from('predicted_events_public') 
+        .select('*')
         .order('event_date', { ascending: true })
         .limit(500);
 
