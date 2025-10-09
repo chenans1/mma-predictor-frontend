@@ -21,12 +21,19 @@ body {
 }
 
 
-/* Header */
-.app__header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(6px);
-  background: rgba(29, 15, 9, 0.85);
-  border-bottom: 1px solid var(--border);
+.header {
+  position: fixed;
+  top: 16px;
+  left: 24px;
+  z-index: 1000;
+  font-weight: 700;
+  font-size: 20px;
+  color: #e6e6e6;
+}
+
+.main {
+  padding: 80px 24px 24px; /* top padding so content doesn't overlap header */
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #e6e6e6;
 }
