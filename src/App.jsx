@@ -9,7 +9,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <header className={styles.header}>
-        UFC ML Powered Fight Predictor
+        UFC Machine-Learning Powered Fight Predictor
       </header>
 
       <main className={styles.main}>
