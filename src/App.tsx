@@ -18,6 +18,9 @@ function App() {
           <Route path="past" element={<PastFightsPage />} />
           <Route path="model" element={<ModelPage />} />
           <Route path="about" element={<AboutPage />} />
+          
+          {/* fall back: */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
     </>
