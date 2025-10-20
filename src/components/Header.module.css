@@ -17,3 +17,23 @@
   font-weight: 700;
   letter-spacing: 0.3px;
 }
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.link {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.active {
+  text-decoration: underline;
+}
