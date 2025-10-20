@@ -1,23 +1,22 @@
-// import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-import './App.css'
+import Header from "./components/Header";
+import UpcomingFightsPage from "./pages/UpcomingFightsPage";
+import PastFightsPage from "./pages/PastFightsPage";
+import ModelPage from "./pages/ModelPage";
+import AboutPage from "./pages/AboutPage";
 
-// function HomePage() {
-//   return <h2>Model Dashboard</h2>;
-// }
-
-// function FutureEventsPage() {
-//   return <h2>Upcoming Events</h2>;
-// }
-
-// function AboutPage() {
-//   return <h2>About the Project</h2>;
-// }
+import './App.css';
 
 function App() {
   return (
     <>
-      <h1>MEOW!!!</h1>
+      <Header />
+      <main style={{ maxWidth: 1200, margin: "0 auto", padding: "1rem" }}>
+        <Routes>
+          <Route path="/" element={<UpcomingFightsPage />} />
+        </Routes>
+      </main>
     </>
   )
 }
