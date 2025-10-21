@@ -53,13 +53,19 @@ export default function PredictionsPage() {
                         const f2 = f.fighter2;
                         const p1 = f.fighter1_win_odds;
                         const p2 = f.fighter2_win_odds;
-                        // const f1Wins = p1 >= p2;
-                        // const f2Wins = p2 > p1;
+                        const f1Wins = p1 >= p2;
+                        const f2Wins = p2 > p1;
                         return (
                             <li key={f.fight_id}
                                 style={{padding: "1rem", border: "1px solid #3334", borderRadius: 12, marginBottom: ".75rem",}}>
                                 <div style={{ fontWeight: 700, fontSize: 18 }}>
-                                    {f1} ({(p1*100).toFixed(1)}%) vs {f2} ({(p2*100).toFixed(1)}%)
+                                    <span style = {{color: f1Wins ? "green" : "inherit"}}>
+                                        {f1} ({(p1 * 100).toFixed(1)}%)
+                                    </span>{" "}
+                                    vs{" "}
+                                    <span style={{ color: f2Wins ? "green" : "inherit" }}>
+                                        {f2} ({(p2 * 100).toFixed(1)}%)
+                                    </span>
                                 </div>
                             </li>
                         );
