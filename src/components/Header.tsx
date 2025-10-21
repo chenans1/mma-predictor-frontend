@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 export default function Header() {
     return (
      <header className = {styles.header}>
-        <div className={styles.brand}>UFC Fight AI Predictor</div>
+        <div className={styles.brand}>UFC AI Fight Predictor</div>
         <nav className={styles.nav}>
             <NavLink to="/"
                 end
