@@ -45,7 +45,7 @@ export default function UpcomingFightsPage() {
           <ul style = {{listStyle: "none", padding: 0, margin: "1rem 0"}}>
             {rows.map((e) => (
               <li key={e.event_id} style={{ padding: ".75rem 0", borderBottom: "1px solid #3334" }}>
-                <Link to={`/events/${encodeURIComponent(e.event_id)}`} style={{ textDecoration: "none" }}>
+                <Link to={`/events/${encodeURIComponent(e.event_id)}`} style={{ textDecoration: "none" }} state = {{ event_name: e.event_name }}>
                   <div style={{ fontWeight: 600 }}>{e.event_name}</div>
                   <div style={{ opacity: 0.8 }}>{e.event_date}</div>
                 </Link>

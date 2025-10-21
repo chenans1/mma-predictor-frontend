@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import {fetchPredictionsByEvent, type PredictedFight} from "../data/fetchPredictions";
 
 export default function PredictionsPage() {
@@ -7,6 +7,9 @@ export default function PredictionsPage() {
     const [rows, setRows] = useState<PredictedFight[]>([]);
     const [status, setStatus] = useState<"idle"|"loading"|"error"|"ready">("idle");
     const [error, setError] = useState<string | null>(null);
+
+    const location = useLocation();
+    const event_name = (location.state as { event_name?: string })?.event_name; 
 
     useEffect(() => {
         const controller = new AbortController();
@@ -40,7 +43,7 @@ export default function PredictionsPage() {
     return (
         <section>
             <Link to="/" style={{ display: "inline-block", marginBottom: "1rem" }}>← Back</Link>
-            <h2>Event: {event_id}</h2>
+            <h2>{event_name}</h2>
             {rows.length === 0 ? (
                 <p>No fights found</p>
             ) : (
@@ -50,7 +53,8 @@ export default function PredictionsPage() {
                         const f2 = f.fighter2;
                         const p1 = f.fighter1_win_odds;
                         const p2 = f.fighter2_win_odds;
-
+                        // const f1Wins = p1 >= p2;
+                        // const f2Wins = p2 > p1;
                         return (
                             <li key={f.fight_id}
                                 style={{padding: "1rem", border: "1px solid #3334", borderRadius: 12, marginBottom: ".75rem",}}>
