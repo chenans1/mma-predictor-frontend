@@ -3,9 +3,15 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const anon = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 
-if (!url || !anon) {
+if (!url) {
     throw new Error(
-        "[Supabase] Missing VITE_SUPABASE_URL and/or VITE_SUPABASE_ANON_KEY. " 
+        "[Supabase] Missing VITE_SUPABASE_URL. " 
+    );
+}
+
+if (!anon) {
+    throw new Error(
+        "[Supabase] Missing VITE_SUPABASE_ANON_KEY. " 
     );
 }
 
