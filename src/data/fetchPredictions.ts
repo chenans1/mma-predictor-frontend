@@ -25,7 +25,7 @@ export async function fetchPredictionsByEvent(
         .from("predicted_events_public")
         .select("*")
         .eq("event_id", eventId)
-        .order("bout_order", { ascending: true });
+        // .order("bout_order", { ascending: true });
 
     if (signal) query = query.abortSignal(signal);
 
