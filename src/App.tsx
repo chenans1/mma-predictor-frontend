@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import UpcomingFightsPage from "./pages/UpcomingFightsPage";
 import PastFightsPage from "./pages/PastFightsPage";
+import ResultsPage from "./pages/ResultsPage";
 import ModelPage from "./pages/ModelPage";
 import AboutPage from "./pages/AboutPage";
 import PredictionsPage from "./pages/PredictionsPage";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<UpcomingFightsPage />} />
           <Route path="/events/:event_id" element={<PredictionsPage />} />
           <Route path="past" element={<PastFightsPage />} />
+          <Route path="/past_events/:event_id" element={<ResultsPage />} />
           <Route path="model" element={<ModelPage />} />
           <Route path="about" element={<AboutPage />} />
           
