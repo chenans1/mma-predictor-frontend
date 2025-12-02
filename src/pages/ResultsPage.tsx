@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
-import {fetchPredictionsByEvent, type PredictedFight} from "../data/fetchPredictions";
+import {fetchPastEventsResults, type PastEventResult} from "../data/fetchPastEventsResults";
 
 export default function ResultsPage() {
     const { event_id } = useParams<{ event_id: string }>();
-    const [rows, setRows] = useState<PredictedFight[]>([]);
+    const [rows, setRows] = useState<PastEventResult[]>([]);
     const [status, setStatus] = useState<"idle"|"loading"|"error"|"ready">("idle");
     const [error, setError] = useState<string | null>(null);
 
@@ -20,7 +20,7 @@ export default function ResultsPage() {
             setStatus("loading");
             setError(null);
             try {
-                const data = await fetchPredictionsByEvent(event_id, controller.signal);
+                const data = await fetchPastEventsResults(event_id, controller.signal);
                 setRows(data);
                 setStatus("ready");
             } catch (err: any) {
@@ -44,7 +44,32 @@ export default function ResultsPage() {
     return (
         <section>
             <Link to="/past" style={{ display: "inline-block", marginBottom: "1rem" }}>← Back</Link>
-            <h2>{event_name}Results Compared to Model</h2>
+            <h2>{event_name} Results Compared to Model</h2>
+            {rows.length === 0 ? (
+                <p>Model did not live predict this event.</p>
+            ) : (
+                <ul style={{ listStyle: "none", padding: 0, margin: "1rem 0" }}>
+                    {rows.map((f) => {
+                        const f1 = f.fighter1;
+                        const f2 = f.fighter2;
+                        const p1 = f.fighter1_win_odds;
+                        const p2 = f.fighter2_win_odds;
+                        const method = f.method;
+                        const actual_winner = f.outcome;
+                        const model_correct = f.model_correct;
+                        // const 
+                        return (
+                            <li key={f.fight_id}>
+                                <div style={{ marginBottom: "1rem" }}>
+                                    <div>Model Prediction: {f1} ({(p1 * 100).toFixed(1)}%) vs {f2} ({(p2 * 100).toFixed(1)}%)</div>
+                                    <div>Actual winner: {actual_winner} by {method}</div>
+                                    <div>{model_correct ? "✔️" : "❌"}</div>
+                                </div>
+                            </li>
+                        );
+                    })}
+                </ul>
+            )}
         </section>
     )
 }
