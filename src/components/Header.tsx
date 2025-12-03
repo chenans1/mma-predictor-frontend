@@ -19,7 +19,7 @@ export default function Header() {
             Past Predictions
             </NavLink>
             
-            <NavLink to="/model"
+            {/* <NavLink to="/model"
                 className={({ isActive }) =>
                     isActive ? `${styles.link} ${styles.active}` : styles.link}>
             Model
@@ -29,7 +29,7 @@ export default function Header() {
                 className={({ isActive }) =>
                     isActive ? `${styles.link} ${styles.active}` : styles.link}>
             About
-            </NavLink>
+            </NavLink> */}
         </nav>
      </header>
     );

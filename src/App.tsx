@@ -20,8 +20,8 @@ function App() {
           <Route path="/events/:event_id" element={<PredictionsPage />} />
           <Route path="past" element={<PastFightsPage />} />
           <Route path="/past_events/:event_id" element={<ResultsPage />} />
-          <Route path="model" element={<ModelPage />} />
-          <Route path="about" element={<AboutPage />} />
+          {/* <Route path="model" element={<ModelPage />} />
+          <Route path="about" element={<AboutPage />} /> */}
           
           {/* fall back: */}
           <Route path="*" element={<Navigate to="/" replace />} />
